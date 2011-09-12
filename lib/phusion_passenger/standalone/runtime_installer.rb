@@ -217,6 +217,7 @@ private
 		end
 		total_progress = (phase.first - 1).to_f / total_phases
 		total_progress += (progress.to_f / total) * ((phase.last - phase.first + 1).to_f / total_phases)
+		total_progress = total_progress.abs
 		
 		max_width = 79
 		progress_bar_width = 45
