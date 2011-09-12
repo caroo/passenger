@@ -49,6 +49,12 @@ spec = Gem::Specification.new do |s|
 	s.description = "Easy and robust Ruby web application deployment."
 end
 
+task :gemspec do
+  File.open('passenger.gemspec', 'w') do |out|
+    out.write spec.to_ruby
+  end
+end
+
 Rake::GemPackageTask.new(spec) do |pkg|
 	pkg.need_tar_gz = true
 end
